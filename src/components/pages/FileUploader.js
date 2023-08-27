@@ -1,8 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 
 function FileUploader() {
   const [selectedFiles, setSelectedFiles] = useState([]);
+  const [message, setMessage] = useState('');
 
   const handleFileChange = (e) => {
     setSelectedFiles([...e.target.files]);
@@ -13,11 +13,12 @@ function FileUploader() {
     selectedFiles.forEach((file) => {
       formData.append('files[]', file);
     });
+    formData.append('message', message); // Mesajı form dataya ekle
 
     try {
       const response = await fetch('http://localhost/gelecege_mesaj_app/upload.php', {
         method: 'POST',
-        body: formData
+        body: formData,
       });
 
       if (response.ok) {
@@ -36,7 +37,13 @@ function FileUploader() {
   return (
     <div>
       <input type="file" multiple onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload Files</button>
+      <textarea
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        placeholder="Enter your message"
+        rows={4}
+      />
+      <button onClick={handleUpload}>Upload Files and Message</button>
     </div>
   );
 }

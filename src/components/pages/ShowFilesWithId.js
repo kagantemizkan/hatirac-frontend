@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const ShowFilesWithId = () => {
     const [files, setFiles] = useState([]); // Dosya listesi
+    const [message, setMessage] = useState([]); // Dosya listesi
     const { id } = useParams();
   
     useEffect(() => {
@@ -14,7 +15,8 @@ const ShowFilesWithId = () => {
           .then(data => {
             // Veriyi işleme ve dosya listesini ayarlama
             console.log(data)
-            setFiles(data); // Her satır bir dosya adı içerir
+            setMessage(data.message)
+            setFiles(data.files); // Her satır bir dosya adı içerir
           })
           .catch(error => {
             console.error('Error fetching data:', error);
@@ -28,6 +30,7 @@ const ShowFilesWithId = () => {
         {files.length > 0 ? (
           <div>
             <h3>User's Files:</h3>
+            <p>Message: {message}</p>
             <ul>
               {files.map((file, index) => (
                 <li key={index}>

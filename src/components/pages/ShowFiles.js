@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function ShowFiles() {
   const [userId, setUserId] = useState(''); // Kullanıcı ID'si
   const [files, setFiles] = useState([]); // Dosya listesi
+  const [message, setMessage] = useState([]); // Dosya listesi
 
   useEffect(() => {
     // Kullanıcı ID'sini güncellediğinizde isteği tekrar yapar
@@ -12,7 +13,8 @@ function ShowFiles() {
         .then(data => {
           // Veriyi işleme ve dosya listesini ayarlama
           console.log(data)
-          setFiles(data); // Her satır bir dosya adı içerir
+          setMessage(data.message)
+          setFiles(data.files); // Her satır bir dosya adı içerir
         })
         .catch(error => {
           console.error('Error fetching data:', error);
@@ -33,6 +35,7 @@ function ShowFiles() {
       {files.length > 0 ? (
         <div>
           <h3>User's Files:</h3>
+          <p>Message: {message}</p>
           <ul>
             {files.map((file, index) => (
               <li key={index}>
