@@ -1,0 +1,108 @@
+body {
+    background: url(../images/uploadBG.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titleUpload {
+    color: #14213D;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+#dropFile {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.drop-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 380px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #14213D;
+    background: #AECB64;
+    color: #14213D;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+    background: #bfdd78;
+    border-color: #14213D;
+}
+
+.drop-container:hover .drop-title {
+    color: #14213D;
+}
+
+.drop-title {
+    color: #14213D;
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    transition: color .2s ease-in-out;
+}
+
+.drop-text {
+    color: #14213D;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.drop-textarea {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    padding: 12px;
+    background: #F9D973;
+    width: 380px;
+
+    #mesajArea {
+        width: 100% !important;
+    }
+}
+
+input[type="date"] {
+    background-color: #14213D;
+    max-width: 380px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: #ffffff;
+    color: #14213D;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.lockButton {
+    background: url(../images/lockButton.svg), lightgray 50% / cover no-repeat;
+    border-radius: 8px;
+    max-width: 329px;
+    height: 60px;
+    color: #EFF7E1;
+    flex-shrink: 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
