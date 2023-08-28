@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 
 const ShowFilesWithId = () => {
   const [files, setFiles] = useState([]); // Dosya listesi
-  const [message, setMessage] = useState([]); // Mesaj
+  const [lockDate, setLockDate] = useState([]); // Dosya listesi
+  const [message, setMessage] = useState([]); // Dosya listesi
+  const [isFile, setIsFile] = useState(false); // Dosya listesi
   const { id } = useParams();
 
   useEffect(() => {
@@ -13,15 +15,17 @@ const ShowFilesWithId = () => {
         .then(response => response.json())
         .then(data => {
           // Veriyi işleme ve dosya listesini ayarlama
-          console.log(data);
-          setMessage(data.message);
+          console.log(data)
+          setLockDate(data.lock_date)
+          setMessage(data.message)
           setFiles(data.files); // Her satır bir dosya adı içerir
+          setIsFile(true)
         })
         .catch(error => {
           console.error('Error fetching data:', error);
         });
     }
-  }, [id]);
+  }, []);
 
   const getFileExtension = (filename) => {
     const parts = filename.split('.');
@@ -45,42 +49,39 @@ const ShowFilesWithId = () => {
     }
   };
 
-  let isFile = () => {
-    if (files) {
-      return true
-    }
-    else {
-      return false
-    }
-  }
-
   return (
-    <div>
-      <h2>Show Files</h2>
-      {isFile() === true ? (
+    <div className='container mt-4 text-center' >
+
+      {isFile === true ? (
         <div>
-          <h3>User's Files:</h3>
-          <p>Message: {message}</p>
-          <ul>
-            {files.map((file, index) => (
-              <li key={index}>
-                <a
-                  href={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {file.filename} - Type: {getFileType(file.filename)}
-                  {getFileType(file.filename) === 'image' ? <img src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} alt={file.url} /> : ''}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <h5 className='mt-3 text-darkBlue'>Ürün ID: <span className='text-muted'>{id}</span></h5>
+          <h5 className='mt-3 text-darkBlue'>Toplam Dosya Sayısı: <span className='text-muted'>{files.length}</span></h5>
+          <h5 className='mt-3 text-darkBlue'>Kilit Açılma Tarihi: <span className='text-muted'>{lockDate}</span></h5>
+          <div className='container bg-note text-left p-3 mt-3'>
+            <p className='text-muted'>Mesajınız: <br /> <span className='text-darkBlue text-note'>{message}</span></p>
+          </div>
+          <div className='container mt-3'>
+            <div className='row'>
+              {files.map((file, index) => (
+                <div key={index} className='col-md-4 mt-2'>
+                  <a
+                    className='image-link'
+                    href={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {getFileType(file.filename) === 'image' ? <img src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} alt={file.url} /> : ''}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       ) : (
         <p>No files found for this user.</p>
       )}
     </div>
   );
-};
+}
 
 export default ShowFilesWithId;
