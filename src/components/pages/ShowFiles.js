@@ -22,6 +22,37 @@ function ShowFiles() {
     }
   }, [userId]);
 
+  const getFileExtension = (filename) => {
+    const parts = filename.split('.');
+    return parts[parts.length - 1];
+  };
+
+  const getFileType = (filename) => {
+    const extension = getFileExtension(filename);
+    // Burada dosya uzantısına göre tür belirleme yapabilirsiniz
+    switch (extension.toLowerCase()) {
+      case 'jpg':
+      case 'jpeg':
+      case 'png':
+        return 'image';
+      case 'mp4':
+        return 'video';
+      case 'pdf':
+        return 'pdf';
+      default:
+        return 'unknown';
+    }
+  };
+
+  let isFile = () => {
+    if (files) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
   return (
     <div>
       <h2>Show Files</h2>
@@ -32,15 +63,20 @@ function ShowFiles() {
         onChange={event => setUserId(event.target.value)}
       />
 
-      {files.length > 0 ? (
+      {isFile() === true ? (
         <div>
           <h3>User's Files:</h3>
           <p>Message: {message}</p>
           <ul>
             {files.map((file, index) => (
               <li key={index}>
-                <a href={`http://localhost/gelecege_mesaj_app/uploads/${userId}/${file.filename}`} target="_blank" rel="noopener noreferrer">
-                  {file.filename}
+                <a
+                  href={`http://localhost/gelecege_mesaj_app/uploads/${userId}/${file.filename}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {file.filename} - Type: {getFileType(file.filename)}
+                  {getFileType(file.filename) === 'image' ? <img src={`http://localhost/gelecege_mesaj_app/uploads/${userId}/${file.filename}`} alt={file.url} /> : ''}
                 </a>
               </li>
             ))}

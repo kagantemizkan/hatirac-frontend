@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function FileUploader() {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [message, setMessage] = useState('');
+  const [lockDate, setLockDate] = useState(''); // Yeni state for lock_date
 
   const handleFileChange = (e) => {
     setSelectedFiles([...e.target.files]);
@@ -13,7 +14,8 @@ function FileUploader() {
     selectedFiles.forEach((file) => {
       formData.append('files[]', file);
     });
-    formData.append('message', message); // Mesajı form dataya ekle
+    formData.append('message', message);
+    formData.append('lock_date', lockDate); // lock_date'ı form dataya ekle
 
     try {
       const response = await fetch('http://localhost/gelecege_mesaj_app/upload.php', {
@@ -22,13 +24,11 @@ function FileUploader() {
       });
 
       if (response.ok) {
-        const data = await response.json(); // Yanıtın JSON içeriğini al
-        console.log(data); // JSON yanıtını konsola yazdır
+        const data = await response.json();
+        console.log(data);
       } else {
         console.error('Error:', response.statusText);
       }
-
-      // Handle response from server
     } catch (error) {
       console.error('Error uploading files:', error);
     }
@@ -42,6 +42,11 @@ function FileUploader() {
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Enter your message"
         rows={4}
+      />
+      <input
+        type="date"
+        value={lockDate}
+        onChange={(e) => setLockDate(e.target.value)}
       />
       <button onClick={handleUpload}>Upload Files and Message</button>
     </div>

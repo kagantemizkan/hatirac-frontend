@@ -45,10 +45,19 @@ const ShowFilesWithId = () => {
     }
   };
 
+  let isFile = () => {
+    if (files) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
   return (
     <div>
       <h2>Show Files</h2>
-      {files.length > 0 ? (
+      {isFile() === true ? (
         <div>
           <h3>User's Files:</h3>
           <p>Message: {message}</p>
@@ -61,6 +70,7 @@ const ShowFilesWithId = () => {
                   rel="noopener noreferrer"
                 >
                   {file.filename} - Type: {getFileType(file.filename)}
+                  {getFileType(file.filename) === 'image' ? <img src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} alt={file.url} /> : ''}
                 </a>
               </li>
             ))}
