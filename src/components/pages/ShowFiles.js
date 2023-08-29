@@ -4,9 +4,8 @@ import '../../styles/showFiles.scss'
 function ShowFiles() {
   const [userId, setUserId] = useState(''); // Kullanıcı ID'si
   const [files, setFiles] = useState([]); // Dosya listesi
-  const [lockDate, setLockDate] = useState([]); // Dosya listesi
-  const [message, setMessage] = useState([]); // Dosya listesi
-  const [isFile, setIsFile] = useState(false); // Dosya listesi
+  const [lockDate, setLockDate] = useState([]); // Kilit Tarihi
+  const [message, setMessage] = useState([]); // Mesaj
 
   useEffect(() => {
     // Kullanıcı ID'sini güncellediğinizde isteği tekrar yapar
@@ -14,12 +13,11 @@ function ShowFiles() {
       fetch(`http://localhost/gelecege_mesaj_app/showFile.php?userid=${userId}`)
         .then(response => response.json())
         .then(data => {
-          // Veriyi işleme ve dosya listesini ayarlama
+          // Verileri State'lere aktarma
           console.log(data)
           setLockDate(data.lock_date)
           setMessage(data.message)
-          setFiles(data.files); // Her satır bir dosya adı içerir
-          setIsFile(true)
+          setFiles(data.files);
         })
         .catch(error => {
           console.error('Error fetching data:', error);
@@ -49,6 +47,15 @@ function ShowFiles() {
     }
   };
 
+  let isFile = () => {
+    if (files) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
   return (
     <div className='container mt-4 text-center' >
       <h2 className='text-darkBlue'>Ürün ID'sini Girerek Dosyalara Ulaşabilirsin!</h2>
@@ -60,7 +67,7 @@ function ShowFiles() {
         onChange={event => setUserId(event.target.value)}
       />
 
-      {isFile === true ? (
+      {isFile() === true ? (
         <div>
           <h5 className='mt-3 text-darkBlue'>Ürün ID: <span className='text-muted'>{userId}</span></h5>
           <h5 className='mt-3 text-darkBlue'>Toplam Dosya Sayısı: <span className='text-muted'>{files.length}</span></h5>
