@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import LockScreen from '../LockScreen/LockScreen';
 
 const ShowFilesWithId = () => {
   const [files, setFiles] = useState([]); // Dosya listesi
@@ -95,12 +96,21 @@ const ShowFilesWithId = () => {
     };
   }
 
+  function isPastDate(dateString) {
+    const now = new Date();
+    const lockDateTime = new Date(dateString);
+    return now < lockDateTime;
+  }
+
   const dateDifference = calculateDateDifference(lockDate);
 
   return (
     <div className='container mt-4 text-center' >
 
       {isFile === true ? (
+        isPastDate(lockDate) ? (
+            <LockScreen dateDifference={dateDifference} />
+        ) :
         <div>
           <h5 className='mt-3 text-darkBlue'>Ürün ID: <span className='text-muted'>{id}</span></h5>
           <h5 className='mt-3 text-darkBlue'>Toplam Dosya Sayısı: <span className='text-muted'>{files.length}</span></h5>
