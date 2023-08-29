@@ -50,6 +50,11 @@ const ShowFilesWithId = () => {
     }
   };
 
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('tr-TR', options);
+  }
+
   return (
     <div className='container mt-4 text-center' >
 
@@ -57,7 +62,7 @@ const ShowFilesWithId = () => {
         <div>
           <h5 className='mt-3 text-darkBlue'>Ürün ID: <span className='text-muted'>{id}</span></h5>
           <h5 className='mt-3 text-darkBlue'>Toplam Dosya Sayısı: <span className='text-muted'>{files.length}</span></h5>
-          <h5 className='mt-3 text-darkBlue'>Kilit Açılma Tarihi: <span className='text-muted'>{lockDate}</span></h5>
+          <h5 className='mt-3 text-darkBlue'>Kilit Açılma Tarihi: <span className='text-muted'>{formatDate(lockDate)}</span></h5>
           <div className='container bg-note text-left p-3 mt-3'>
             <p className='text-muted'>Mesajınız: <br /> <span className='text-darkBlue text-note'>{message}</span></p>
           </div>
