@@ -99,7 +99,7 @@ function ShowFiles() {
           </div>
         </div>
       ) : (
-        <p>No files found for this user.</p>
+        <p className='text-darkBlue mt-3'>Bu Ürün ID'sine ait dosya bulunamadı.</p>
       )}
     </div>
   );
