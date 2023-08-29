@@ -65,23 +65,23 @@ const ShowFilesWithId = () => {
     let dayDifference = lockDateTime.getDate() - now.getDate();
     let hourDifference = lockDateTime.getHours() - now.getHours();
     let minuteDifference = lockDateTime.getMinutes() - now.getMinutes();
-  
+
     if (minuteDifference < 0) {
       minuteDifference += 60;
       hourDifference--;
     }
-  
+
     if (hourDifference < 0) {
       hourDifference += 24;
       dayDifference--;
     }
-  
+
     if (dayDifference < 0) {
       const daysInLastMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
       dayDifference += daysInLastMonth;
       monthDifference--;
     }
-  
+
     if (monthDifference < 0) {
       monthDifference += 12;
       yearDifference--;
@@ -109,41 +109,38 @@ const ShowFilesWithId = () => {
 
       {isFile === true ? (
         isPastDate(lockDate) ? (
-            <LockScreen dateDifference={dateDifference} />
+          <LockScreen dateDifference={dateDifference} />
         ) :
-        <div>
-          <h5 className='mt-3 text-darkBlue'>Ürün ID: <span className='text-muted'>{id}</span></h5>
-          <h5 className='mt-3 text-darkBlue'>Toplam Dosya Sayısı: <span className='text-muted'>{files.length}</span></h5>
-          <h5 className='mt-3 text-darkBlue'>Kilit Açılma Tarihi: <span className='text-muted'>{formatDate(lockDate)}</span></h5>
           <div>
-            <p>Kalan süre: {dateDifference.years} yıl, {dateDifference.months} ay, {dateDifference.days} gün, {dateDifference.hours} saat, {dateDifference.minutes} dakika</p>
-          </div>
-          <div className='container bg-note text-left p-3 mt-3'>
-            <p className='text-muted'>Mesajınız: <br /> <span className='text-darkBlue text-note'>{message}</span></p>
-          </div>
-          <div className='container mt-3'>
-            <div className='row'>
-              {files.map((file, index) => (
-                <div key={index} className='col-md-4 mt-2'>
-                  <a
-                    className='image-link'
-                    href={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {getFileType(file.filename) === 'image' ? <img src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} alt={file.url} /> : ''}
-                    {getFileType(file.filename) === 'video' ? <video controls width="100%">
-                      <source src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} type="video/mp4" />
-                      Tarayıcınız video etiketini desteklemiyor.
-                    </video>
-                      : ''}
-                    {getFileType(file.filename) === 'pdf' ? <iframe title='PDF' src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} width="100%" height="500px"></iframe> : ''}
-                  </a>
-                </div>
-              ))}
+            <h5 className='mt-3 text-darkBlue'>Ürün ID: <span className='text-muted'>{id}</span></h5>
+            <h5 className='mt-3 text-darkBlue'>Toplam Dosya Sayısı: <span className='text-muted'>{files.length}</span></h5>
+            <h5 className='mt-3 text-darkBlue'>Kilit Açılma Tarihi: <span className='text-muted'>{formatDate(lockDate)}</span></h5>
+            <div className='container bg-note text-left p-3 mt-3'>
+              <p className='text-muted'>Mesajınız: <br /> <span className='text-darkBlue text-note'>{message}</span></p>
+            </div>
+            <div className='container mt-3'>
+              <div className='row'>
+                {files.map((file, index) => (
+                  <div key={index} className='col-md-4 mt-2'>
+                    <a
+                      className='image-link'
+                      href={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {getFileType(file.filename) === 'image' ? <img src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} alt={file.url} /> : ''}
+                      {getFileType(file.filename) === 'video' ? <video controls width="100%">
+                        <source src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} type="video/mp4" />
+                        Tarayıcınız video etiketini desteklemiyor.
+                      </video>
+                        : ''}
+                      {getFileType(file.filename) === 'pdf' ? <iframe title='PDF' src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} width="100%" height="500px"></iframe> : ''}
+                    </a>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
       ) : (
         <p className='text-darkBlue mt-3'>Bu Ürün ID'sine ait dosya bulunamadı.</p>
       )}
