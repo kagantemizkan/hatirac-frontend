@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from '../HomeComponents/Header'
+import Marquee from '../HomeComponents/Marquee'
 
 const Home = () => {
   return (
-    <header>
+    <>
       <Header />
-    </header>
+      <Marquee />
+    </>
   )
 }
 
