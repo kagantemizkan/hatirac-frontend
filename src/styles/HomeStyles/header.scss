@@ -1,0 +1,16 @@
+.bg-lightBlue {
+    background-color: #dfeaf3;
+}
+
+.nav-link {
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: underline;
+    border-radius: 8px;
+    transition: .2s all !important;
+
+    &:hover {
+        text-decoration: none !important;
+        color: #f19a16!important;
+    }
+}
