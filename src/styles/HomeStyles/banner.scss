@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Oswald&display=swap');
+
+.bg-sari {
+    background-color: #f19a16;
+    color: #14213D;
+}
+
+.bannerText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+
+    h2 {
+        color: #14213D;
+        font-weight: 800;
+        font-family: 'Merienda', cursive;
+        font-family: 'Oswald', sans-serif;
+        padding: 25px;
+    }
+}
+
+.col-md-6 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
