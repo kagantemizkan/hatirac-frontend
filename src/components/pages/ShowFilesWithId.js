@@ -112,6 +112,7 @@ const ShowFilesWithId = () => {
           <LockScreen dateDifference={dateDifference} />
         ) :
           <div>
+            <h1 className='titleUpload text-center mt-2 mb-3'>Hatıraç</h1>
             <h5 className='mt-3 text-darkBlue'>Ürün ID: <span className='text-muted'>{id}</span></h5>
             <h5 className='mt-3 text-darkBlue'>Toplam Dosya Sayısı: <span className='text-muted'>{files.length}</span></h5>
             <h5 className='mt-3 text-darkBlue'>Kilit Açılma Tarihi: <span className='text-muted'>{formatDate(lockDate)}</span></h5>

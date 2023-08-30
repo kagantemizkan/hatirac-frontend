@@ -113,6 +113,7 @@ function ShowFiles() {
 
   return (
     <div className='container mt-4 text-center' >
+      <h1 className='titleUpload text-center mt-2 mb-3'>Hatıraç</h1>
       <h2 className='text-darkBlue'>Ürün ID'sini Girerek Dosyalara Ulaşabilirsin!</h2>
       <input
         className='mt-2'

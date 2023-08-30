@@ -49,7 +49,7 @@ function FileUploader() {
 
   return (
     <div className='container p-3'>
-      <h1 className='titleUpload text-center mt-2'>Geleceğe Mesaj App</h1>
+      <h1 className='titleUpload text-center mt-2'>Hatıraç</h1>
       {
         isComplated ?
         <ComplatedUpload data={complatedData} />
