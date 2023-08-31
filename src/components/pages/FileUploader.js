@@ -48,7 +48,6 @@ function FileUploader() {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         setComplatedData(data)
       } else {
         console.error('Error:', response.statusText);

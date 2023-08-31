@@ -17,7 +17,6 @@ function ShowFiles() {
         .then(response => response.json())
         .then(data => {
           // Verileri State'lere aktarma
-          console.log(data)
           setLockDate(data.lock_date)
           setMessage(data.message)
           setFiles(data.files);

@@ -19,7 +19,6 @@ const ShowFilesWithId = () => {
         .then(response => response.json())
         .then(data => {
           // Veriyi işleme ve dosya listesini ayarlama
-          console.log(data)
           setLockDate(data.lock_date)
           setMessage(data.message)
           setFiles(data.files); // Her satır bir dosya adı içerir

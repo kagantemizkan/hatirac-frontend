@@ -6,7 +6,6 @@ const ComplatedUpload = (props) => {
   
   const qrCodeUrl = `https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=http://localhost:3000/show/${props.data.userid}`
 
-
   return (
     <div className='container d-flex flex-column justify-content-center align-items-center text-center mt-4'>
       <img src={Lock} alt='Lock' width={150} />
