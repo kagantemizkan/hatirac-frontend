@@ -22,7 +22,8 @@ function FileUploader() {
       formData.append('files[]', file);
     });
     formData.append('message', message);
-    formData.append('lock_date', lockDate); // lock_date'ı form dataya ekle
+    formData.append('lock_date', lockDate);
+    formData.append('files_length', selectedFiles.length);
 
     try {
       const response = await fetch('http://localhost/gelecege_mesaj_app/upload.php', {
