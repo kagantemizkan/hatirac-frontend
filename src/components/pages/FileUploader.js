@@ -14,7 +14,21 @@ function FileUploader() {
   const [complatedData, setComplatedData] = useState(false);
 
   const handleFileChange = (e) => {
-    setSelectedFiles([...e.target.files]);
+    const files = e.target.files;
+    const maxSize = 1024 * 1024 * 1024; // 1GB
+
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+
+      if (file.size > maxSize) {
+        alert("Bir veya daha fazla dosya 1GB'dan büyük!");
+        e.target.value = null; // Dosya seçimini sıfırla
+        return;
+      }
+
+      // Dosya boyutu sınırlamasını geçmeyen dosyalar için yapılacak işlemler
+      setSelectedFiles([...e.target.files]);
+    }
   };
 
   const handleUpload = async () => {
