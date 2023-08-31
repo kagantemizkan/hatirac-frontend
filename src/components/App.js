@@ -4,11 +4,15 @@ import ShowFilesWithId from "./pages/ShowFilesWithId";
 import FileUploader from "./pages/FileUploader";
 import '../styles/app.css'
 import Home from "./pages/Home";
+import { Helmet } from 'react-helmet';
 
 function App() {
   return (
     <>
-    <Routes>
+      <Helmet>
+        <link rel="icon" href="/path-to-your-new-favicon.ico" />
+      </Helmet>
+      <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/upload' element={<FileUploader />} />
         <Route path='/show' element={<ShowFiles />} />
