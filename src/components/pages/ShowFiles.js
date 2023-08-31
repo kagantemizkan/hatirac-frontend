@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../styles/showFiles.scss'
 import LockScreen from '../LockScreen/LockScreen';
 import { Helmet } from 'react-helmet';
+import Logo from '../../images/logo.png'
 
 function ShowFiles() {
   const [userId, setUserId] = useState(''); // Kullanıcı ID'si
@@ -115,7 +116,7 @@ function ShowFiles() {
   return (
     <div className='container mt-4 text-center' >
       <Helmet>
-        <link rel="icon" href="/path-to-your-new-favicon.ico" />
+        <link rel="icon" href={Logo} />
       </Helmet>
       <h1 className='titleUpload text-center mt-2 mb-3'>Hatıraç</h1>
       <h2 className='text-darkBlue'>Ürün ID'sini Girerek Dosyalara Ulaşabilirsin!</h2>

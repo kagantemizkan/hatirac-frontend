@@ -5,12 +5,13 @@ import FileUploader from "./pages/FileUploader";
 import '../styles/app.css'
 import Home from "./pages/Home";
 import { Helmet } from 'react-helmet';
+import Logo from '../images/logo.png'
 
 function App() {
   return (
     <>
       <Helmet>
-        <link rel="icon" href="/path-to-your-new-favicon.ico" />
+        <link rel="icon" href={Logo} />
       </Helmet>
       <Routes>
         <Route path='/' element={<Home />} />

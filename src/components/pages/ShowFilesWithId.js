@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LockScreen from '../LockScreen/LockScreen';
 import { Helmet } from 'react-helmet';
+import Logo from '../../images/logo.png'
 
 const ShowFilesWithId = () => {
   const [files, setFiles] = useState([]); // Dosya listesi
@@ -108,7 +109,7 @@ const ShowFilesWithId = () => {
   return (
     <div className='container mt-4 text-center' >
       <Helmet>
-        <link rel="icon" href="/path-to-your-new-favicon.ico" />
+        <link rel="icon" href={Logo} />
       </Helmet>
       {isFile === true ? (
         isPastDate(lockDate) ? (

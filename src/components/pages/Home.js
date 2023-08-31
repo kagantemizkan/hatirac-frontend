@@ -4,12 +4,13 @@ import Marquee from '../HomeComponents/Marquee'
 import Banner from '../HomeComponents/Banner'
 import Footer from '../HomeComponents/Footer'
 import { Helmet } from 'react-helmet';
+import Logo from '../../images/logo.png'
 
 const Home = () => {
   return (
     <>
       <Helmet>
-        <link rel="icon" href="/path-to-your-new-favicon.ico" />
+        <link rel="icon" href={Logo} />
       </Helmet>
       <Header />
       <Marquee />

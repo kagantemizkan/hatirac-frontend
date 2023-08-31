@@ -4,6 +4,7 @@ import MediaIcon from '../../images/medyaIcon.svg'
 import Lock from '../../images/lock.svg'
 import ComplatedUpload from '../ComplatedUpload/ComplatedUpload';
 import { Helmet } from 'react-helmet';
+import Logo from '../../images/logo.png'
 
 function FileUploader() {
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -52,7 +53,7 @@ function FileUploader() {
   return (
     <div className='container p-3'>
       <Helmet>
-        <link rel="icon" href="/path-to-your-new-favicon.ico" />
+        <link rel="icon" href={Logo} />
       </Helmet>
       <h1 className='titleUpload text-center mt-2'>Hatıraç</h1>
       {
