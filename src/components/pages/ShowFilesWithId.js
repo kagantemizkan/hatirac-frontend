@@ -15,7 +15,7 @@ const ShowFilesWithId = () => {
   useEffect(() => {
     // Kullanıcı ID'sini güncellediğinizde isteği tekrar yapar
     if (id !== '') {
-      fetch(`http://localhost/gelecege_mesaj_app/showFile.php?userid=${id}`)
+      fetch(`https://hatirac.com/hatirac-backend/showFile.php?userid=${id}`)
         .then(response => response.json())
         .then(data => {
           // Veriyi işleme ve dosya listesini ayarlama
@@ -128,17 +128,17 @@ const ShowFilesWithId = () => {
                   <div key={index} className='col-md-4 mt-2'>
                     <a
                       className='image-link'
-                      href={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`}
+                      href={`https://hatirac.com/hatirac-backend/uploads/${id}/${file.filename}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {getFileType(file.filename) === 'image' ? <img src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} alt={file.url} /> : ''}
+                      {getFileType(file.filename) === 'image' ? <img src={`https://hatirac.com/hatirac-backend/uploads/${id}/${file.filename}`} alt={file.url} /> : ''}
                       {getFileType(file.filename) === 'video' ? <video controls width="100%">
-                        <source src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} type="video/mp4" />
+                        <source src={`https://hatirac.com/hatirac-backend/uploads/${id}/${file.filename}`} type="video/mp4" />
                         Tarayıcınız video etiketini desteklemiyor.
                       </video>
                         : ''}
-                      {getFileType(file.filename) === 'pdf' ? <iframe title='PDF' src={`http://localhost/gelecege_mesaj_app/uploads/${id}/${file.filename}`} width="100%" height="500px"></iframe> : ''}
+                      {getFileType(file.filename) === 'pdf' ? <iframe title='PDF' src={`https://hatirac.com/hatirac-backend/uploads/${id}/${file.filename}`} width="100%" height="500px"></iframe> : ''}
                     </a>
                   </div>
                 ))}

@@ -32,34 +32,40 @@ function FileUploader() {
   };
 
   const handleUpload = async () => {
-    const formData = new FormData();
-    selectedFiles.forEach((file) => {
-      formData.append('files[]', file);
-    });
-    formData.append('message', message);
-    formData.append('lock_date', lockDate);
-    formData.append('files_length', selectedFiles.length);
-
-    try {
-      const response = await fetch('http://localhost/gelecege_mesaj_app/upload.php', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setComplatedData(data)
-      } else {
-        console.error('Error:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Error uploading files:', error);
+    console.log(selectedFiles)
+    if (selectedFiles.length === 0 ) {
+      alert('Kilitlemek için tüm aşamaları doğru bir şekilde tamamlayın.')
     }
+    else {
+      const formData = new FormData();
+      selectedFiles.forEach((file) => {
+        formData.append('files[]', file);
+      });
+      formData.append('message', message);
+      formData.append('lock_date', lockDate);
+      formData.append('files_length', selectedFiles.length);
 
-    setIsComplated(true)
-    setMessage('')
-    setLockDate('')
-    setSelectedFiles([])
+      try {
+        const response = await fetch('https://hatirac.com/hatirac-backend/upload.php', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setComplatedData(data)
+        } else {
+          console.error('Error:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error uploading files:', error);
+      }
+
+      setIsComplated(true)
+      setMessage('')
+      setLockDate('')
+      setSelectedFiles([])
+    }
 
   };
 
@@ -97,6 +103,7 @@ function FileUploader() {
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Mesajınızı girin..."
                   rows={4}
+                  required
                 />
               </div>
             </div>
@@ -109,6 +116,7 @@ function FileUploader() {
                   type="date"
                   value={lockDate}
                   onChange={(e) => setLockDate(e.target.value)}
+                  required
                 />
               </div>
             </div>
