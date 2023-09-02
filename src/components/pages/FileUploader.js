@@ -33,7 +33,7 @@ function FileUploader() {
 
   const handleUpload = async () => {
     console.log(selectedFiles)
-    if (selectedFiles.length === 0 ) {
+    if (selectedFiles.length === 0 || message === '' || lockDate === '') {
       alert('Kilitlemek için tüm aşamaları doğru bir şekilde tamamlayın.')
     }
     else {
