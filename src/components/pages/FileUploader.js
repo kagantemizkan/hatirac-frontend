@@ -12,6 +12,7 @@ function FileUploader() {
   const [lockDate, setLockDate] = useState('');
   const [isComplated, setIsComplated] = useState(false);
   const [complatedData, setComplatedData] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (e) => {
     const files = e.target.files;
@@ -37,6 +38,7 @@ function FileUploader() {
       alert('Kilitlemek için tüm aşamaları doğru bir şekilde tamamlayın.')
     }
     else {
+      setLoading(true)
       const formData = new FormData();
       selectedFiles.forEach((file) => {
         formData.append('files[]', file);
@@ -61,6 +63,7 @@ function FileUploader() {
         console.error('Error uploading files:', error);
       }
 
+      setLoading(false)
       setIsComplated(true)
       setMessage('')
       setLockDate('')
@@ -120,7 +123,9 @@ function FileUploader() {
                 />
               </div>
             </div>
-            <button className='lockButton mt-4 d-flex align-items-center py-1 justify-content-center w-100' onClick={handleUpload}>KİLİTLE <img src={Lock} alt='Lock' /></button>
+            {loading ? <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              :
+              <button className='lockButton mt-4 d-flex align-items-center py-1 justify-content-center w-100' onClick={handleUpload}>KİLİTLE <img src={Lock} alt='Lock' /></button>}
           </div>
       }
     </div>
