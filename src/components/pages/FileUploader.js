@@ -90,7 +90,7 @@ function FileUploader() {
                   :
                   <p className='drop-text'>Video, Fotoğraf, Resim vb.</p>}
 
-                <input type="file" className='custom-file-input' id="dropFile" multiple onChange={handleFileChange} required />
+                <input type="file" className='custom-file-input' id="dropFile" multiple onChange={handleFileChange} accept="image/*, video/*, audio/*" required />
               </div>
               <img src={MediaIcon} alt='MediaIcon' />
             </label>
