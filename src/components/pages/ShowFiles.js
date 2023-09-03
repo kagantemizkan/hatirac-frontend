@@ -42,8 +42,11 @@ function ShowFiles() {
         return 'image';
       case 'mp4':
         return 'video';
-      case 'pdf':
-        return 'pdf';
+      case 'mp3':
+      case 'mpeg':
+      case 'wav':
+      case 'ogg':
+        return 'audio';
       default:
         return 'unknown';
     }
@@ -154,7 +157,13 @@ function ShowFiles() {
                         Tarayıcınız video etiketini desteklemiyor.
                       </video>
                         : ''}
-                      {getFileType(file.filename) === 'pdf' ? <iframe title='PDF' src={`https://hatirac.com/hatirac-backend/uploads/${userId}/${file.filename}`} width="100%" height="500px"></iframe> : ''}
+                      {getFileType(file.filename) === 'audio' ? <audio controls>
+                        <source src={`https://hatirac.com/hatirac-backend/uploads/${userId}/${file.filename}`} type="audio/mpeg" />
+                        <source src={`https://hatirac.com/hatirac-backend/uploads/${userId}/${file.filename}`} type="audio/mp3" />
+                        <source src={`https://hatirac.com/hatirac-backend/uploads/${userId}/${file.filename}`} type="audio/wav" />
+                        <source src={`https://hatirac.com/hatirac-backend/uploads/${userId}/${file.filename}`} type="audio/ogg" />
+                        Tarayıcınız ses etiketini desteklemiyor.
+                      </audio> : ''}
                     </a>
                   </div>
                 ))}
