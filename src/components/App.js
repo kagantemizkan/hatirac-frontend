@@ -6,6 +6,7 @@ import '../styles/app.css'
 import Home from "./pages/Home";
 import { Helmet } from 'react-helmet';
 import Logo from '../images/logo.png'
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/upload' element={<FileUploader />} />
         <Route path='/show' element={<ShowFiles />} />
         <Route path='/show/:id' element={<ShowFilesWithId />} />
+        <Route path='/monte' element={<Admin />} />
       </Routes>
     </>
   );
