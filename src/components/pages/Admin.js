@@ -31,7 +31,7 @@ function Admin() {
 
     return (
         <>
-            {isLogin ? (
+            {!isLogin ? (
                 <div className='container p-5'>
                     <h1 className='text-center mt-4'>Admin Girişi</h1>
                     <div className='d-flex flex-column justify-content-center align-items-center'>
