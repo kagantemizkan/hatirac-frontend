@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/AdminPanel/panel.scss'
 import Lock from '../../images/lock.svg'
+import MessageCell from './MessageCell';
 
 function Panel() {
   const [data, setData] = useState([]);
@@ -18,6 +19,33 @@ function Panel() {
       })
       .catch(error => console.error('Veri çekme hatası: ', error));
   }, []);
+
+  function handleDelete(id) {
+    // Silme isteği gönderme
+    fetch(`https://hatirac.com/hatirac-backend/adminPanel.php?id=${id}`, {
+      method: 'DELETE',
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Silinen veriyi güncelleme
+        if (data.success) {
+          alert('Silme işlemi başarılı.');
+          // Tabloyu yeniden çekme
+          fetch('https://hatirac.com/hatirac-backend/adminPanel.php')
+            .then(response => response.json())
+            .then(data => {
+              setData(data.data);
+              setTotalFilesLength(data.totalFilesLength);
+              setTotalRecords(data.totalRecords);
+            })
+            .catch(error => console.error('Veri çekme hatası: ', error));
+        } else {
+          // Silme başarısız
+          console.error('Silme hatası: ', data.error);
+        }
+      })
+      .catch(error => console.error('Silme işlemi hatası: ', error));
+  }
 
   function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -51,11 +79,11 @@ function Panel() {
                 <tr key={item.id}>
                   <td><p className='text-muted'>{item.id}</p></td>
                   <td><a href={`https://hatirac.com/show/${item.file_name}`} target='_blank' rel="noreferrer">{item.file_name}</a></td>
-                  <td>{item.message}</td>
+                  <MessageCell message={item.message} />
                   <td>{formatDate(item.lock_date)}</td>
                   <td>{item.files_length}</td>
                   <td>{formatDate(item.created_date)}</td>
-                  <td><button className='btn btn-danger'>Sil</button></td>
+                  <td><button className='btn btn-danger' onClick={() => handleDelete(item.id)}>Sil</button></td>
                 </tr>
               ))}
             </tbody>
