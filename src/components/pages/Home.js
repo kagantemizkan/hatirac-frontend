@@ -5,6 +5,8 @@ import Banner from '../HomeComponents/Banner'
 import Footer from '../HomeComponents/Footer'
 import { Helmet } from 'react-helmet';
 import Logo from '../../images/logo.png'
+import Slider from '../HomeComponents/Slider'
+import FizikselUrunler from '../HomeComponents/FizikselUrunler'
 
 const Home = () => {
   return (
@@ -14,6 +16,8 @@ const Home = () => {
       </Helmet>
       <Header />
       <Marquee />
+      <Slider />
+      <FizikselUrunler />
       <Banner />
       <Footer />
     </>

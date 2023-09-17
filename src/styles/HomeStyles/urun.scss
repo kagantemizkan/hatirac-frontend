@@ -1,0 +1,9 @@
+.urun {
+    transition: .3s all;
+
+    &:hover {
+        scale: 1.05;
+        background-color: #f19a16;
+        color: white;
+    }
+}
