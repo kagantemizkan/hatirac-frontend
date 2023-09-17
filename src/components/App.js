@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import { Helmet } from 'react-helmet';
 import Logo from '../images/logo.png'
 import Admin from "./pages/Admin";
+import Product from "./pages/Product";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path='/show' element={<ShowFiles />} />
         <Route path='/show/:id' element={<ShowFilesWithId />} />
         <Route path='/monte' element={<Admin />} />
+        <Route path='/products' element={<Products />} />
+        <Route path='/product/:id' element={<Product />} />
       </Routes>
     </>
   );
