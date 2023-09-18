@@ -36,6 +36,9 @@ const Product = () => {
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
               </ol>
               <div className="carousel-inner">
                 <div className="carousel-item active">
@@ -46,6 +49,15 @@ const Product = () => {
                 </div>
                 <div className="carousel-item">
                   <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/3.png`} className="d-block w-100" alt="Ürün" />
+                </div>
+                <div className="carousel-item">
+                  <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/4.png`} className="d-block w-100" alt="Ürün" />
+                </div>
+                <div className="carousel-item">
+                  <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/5.png`} className="d-block w-100" alt="Ürün" />
+                </div>
+                <div className="carousel-item">
+                  <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/6.png`} className="d-block w-100" alt="Ürün" />
                 </div>
               </div>
               <button className="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
