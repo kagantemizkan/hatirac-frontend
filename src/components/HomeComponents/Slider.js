@@ -1,6 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import Lock from '../../images/lock.svg'
+import Slider1 from '../../images/Slider/1.png'
+import Slider3 from '../../images/Slider/3.png'
+import OrtaSlider1 from '../../images/Slider/Orta/1.png'
+import OrtaSlider3 from '../../images/Slider/Orta/3.png'
+import KucukSlider1 from '../../images/Slider/Kucuk/1.png'
+import KucukSlider3 from '../../images/Slider/Kucuk/3.png'
+import '../../styles/HomeStyles/slider.scss'
 
 const Slider = () => {
     return (
@@ -9,38 +15,17 @@ const Slider = () => {
                 <ol className="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <div style={{minHeight: '300px'}} className='container p-5 d-flex justify-content-around align-items-center'>
-                            <div className='col-md-6 text-center'>
-                                <h2 style={{ fontSize: '50px' }}>ZAMANIN ÖTESİNDE BİR ARMAĞAN...</h2>
-                            </div>
-                            <div className='col-md-6 text-center'>
-                                <img src={Lock} alt='Lock' width={120} />
-                            </div>
-                        </div>
+                        <img src={Slider1} alt="Büyük Resim" className="buyuk-resim" />
+                        <img src={OrtaSlider1} alt="Orta Resim" className="orta-resim" />
+                        <img src={KucukSlider1} alt="Küçük Resim" className="kucuk-resim" />
                     </div>
                     <div className="carousel-item">
-                        <div style={{minHeight: '300px'}} className='container p-5 d-flex justify-content-around align-items-center'>
-                            <div className='col-md-6 text-center'>
-                                <img src={Lock} alt='Lock' width={120} />
-                            </div>
-                            <div className='col-md-6 text-center'>
-                                <h2 style={{ fontSize: '45px' }}>ANILARDAN DAHA ANLAMLI NE OLABİLİR?</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div style={{minHeight: '300px'}} className='container p-5 d-flex justify-content-around align-items-center'>
-                            <div className='col-md-6 text-center'>
-                                <h2 style={{ fontSize: '50px' }}>Ürünlerimizi İncelemek için --&gt;</h2>
-                            </div>
-                            <div className='col-md-6 text-center'>
-                                <a href='#' className='btn btn-lg btn-primary'>Ürünlerimiz</a>
-                            </div>
-                        </div>
+                        <img src={Slider3} alt="Büyük Resim" className="buyuk-resim" />
+                        <img src={OrtaSlider3} alt="Orta Resim" className="orta-resim" />
+                        <img src={KucukSlider3} alt="Küçük Resim" className="kucuk-resim" />
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -23,7 +23,7 @@ const FizikselUrunler = () => {
                     {urunler.map((urun, index) => (
                         <div key={index} className="col-md-4 mt-2 mb-2 pt-3 rounded urun">
                             <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/1.png`} className="w-100" alt="Ürün Resmi" />
-                            <div className="card-body">
+                            <div className="card-body pl-0">
                                 <h5 className="card-title">{urun.urun_adi}</h5>
                                 <p className="card-text">{urun.onyazi}</p>
                                 <div className='d-flex flex-row justify-content-between align-items-center'>
