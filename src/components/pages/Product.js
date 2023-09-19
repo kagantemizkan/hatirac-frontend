@@ -133,17 +133,52 @@ const Product = () => {
             </div>
           </div>
           <div className='container'>
-            <div className='row'>
-              <div className='col-md-4'>
-
+            <section>
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-10 col-xl-8 text-center">
+                  <h3>Müşteri Yorumları</h3>
+                  <p class="mb-3">
+                    Değerli müşterilerimizden <strong>{urun.urun_adi}</strong> ürünümüz hakkında aldığımız yorumlardan bazılarını sizlere fikir oluşturması için sergiliyoruz.
+                  </p>
+                </div>
               </div>
-              <div className='col-md-4'>
 
+              <div class="row text-center d-flex align-items-stretch">
+                <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+                  <div class="card testimonial-card" style={{ backgroundColor: '#cadce7' }}>
+                    <div class="card-body">
+                      <h4 class="mb-4"><i class="fas fa-quote-left pe-2"></i></h4>
+                      <hr />
+                      <p class="mt-2">
+                        {urun.musteri_yorum1}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+                  <div class="card testimonial-card" style={{ backgroundColor: '#ffffff' }}>
+                    <div class="card-body">
+                      <h4 class="mb-4"><i class="fas fa-quote-left pe-2"></i></h4>
+                      <hr />
+                      <p class="mt-2">
+                        {urun.musteri_yorum2}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-0 d-flex align-items-stretch">
+                  <div class="card testimonial-card" style={{ backgroundColor: '#F9D973' }}>
+                    <div class="card-body">
+                      <h4 class="mb-4"><i class="fas fa-quote-left pe-2"></i></h4>
+                      <hr />
+                      <p class="mt-2">
+                        {urun.musteri_yorum3}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className='col-md-4'>
-
-              </div>
-            </div>
+            </section>
           </div>
         </div>
       </div>
