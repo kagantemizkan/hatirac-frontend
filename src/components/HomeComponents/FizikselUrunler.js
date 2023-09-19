@@ -17,7 +17,7 @@ const FizikselUrunler = () => {
             });
     }, []);
     return (
-        <div className='container-fluid p-5 bg-white'>
+        <div className='container-fluid p-5 bg-white rounded'>
             <div className='container'>
                 <div className="row justify-content-around">
                     {urunler.map((urun, index) => (

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Header from '../HomeComponents/Header';
 import '../../styles/Products/product.scss'
+import FizikselUrunler from '../HomeComponents/FizikselUrunler';
 
 const Product = () => {
   const [urun, setUrun] = useState({});
@@ -105,14 +106,14 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className='container p-5 mt-4'>
+          <div className='container pt-5 mt-4 mb-3'>
             <h2 className='mb-5 text-center font-weight-bold'>Ürün Detayları</h2>
-            <div className='row justify-content-around align-items-center p-5'>
+            <div className='row justify-content-around align-items-center'>
               <div className='col-md-6'>
-                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/1.png`} height={400} className='w-100' alt="Ürün" />
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/1.png`} height={350} className='w-100' alt="Ürün" />
               </div>
               <div className='col-md-6'>
-                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/3.png`} height={400} className='w-100' alt="Ürün" />
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/3.png`} height={350} className='w-100' alt="Ürün" />
               </div>
               <div className='col-md-6'>
                 <ul className='h4 font-weight-light p-3'>
@@ -122,17 +123,17 @@ const Product = () => {
                 </ul>
               </div>
               <div className='col-md-6'>
-                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/5.png`} height={400} className='w-100' alt="Ürün" />
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/5.png`} height={350} className='w-100' alt="Ürün" />
               </div>
               <div className='col-md-6'>
-                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/6.png`} height={400} className='w-100' alt="Ürün" />
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/6.png`} height={350} className='w-100' alt="Ürün" />
               </div>
               <div className='col-md-6 text-center'>
                 <p className='font-weight-light h3 p-3'>{urun.ozellikler}</p>
               </div>
             </div>
           </div>
-          <div className='container'>
+          <div className='container mt-5'>
             <section>
               <div class="row d-flex justify-content-center">
                 <div class="col-md-10 col-xl-8 text-center">
@@ -142,10 +143,9 @@ const Product = () => {
                   </p>
                 </div>
               </div>
-
               <div class="row text-center d-flex align-items-stretch">
                 <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
-                  <div class="card testimonial-card" style={{ backgroundColor: '#cadce7' }}>
+                  <div class="card testimonial-card" style={{ backgroundColor: '#dfff00' }}>
                     <div class="card-body">
                       <h4 class="mb-4"><i class="fas fa-quote-left pe-2"></i></h4>
                       <hr />
@@ -156,7 +156,7 @@ const Product = () => {
                   </div>
                 </div>
                 <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
-                  <div class="card testimonial-card" style={{ backgroundColor: '#ffffff' }}>
+                  <div class="card testimonial-card" style={{ backgroundColor: '#e0b0ff' }}>
                     <div class="card-body">
                       <h4 class="mb-4"><i class="fas fa-quote-left pe-2"></i></h4>
                       <hr />
@@ -167,7 +167,7 @@ const Product = () => {
                   </div>
                 </div>
                 <div class="col-md-4 mb-0 d-flex align-items-stretch">
-                  <div class="card testimonial-card" style={{ backgroundColor: '#F9D973' }}>
+                  <div class="card testimonial-card" style={{ backgroundColor: '#00BFFF' }}>
                     <div class="card-body">
                       <h4 class="mb-4"><i class="fas fa-quote-left pe-2"></i></h4>
                       <hr />
@@ -179,6 +179,10 @@ const Product = () => {
                 </div>
               </div>
             </section>
+          </div>
+          <div className='container mt-5 pt-5 mb-5 text-center'>
+            <h2 className='p-3'>Diğer Ürünlerimize'de Göz Atın!</h2>
+            <FizikselUrunler />
           </div>
         </div>
       </div>
