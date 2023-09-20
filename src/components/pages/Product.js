@@ -76,8 +76,9 @@ const Product = () => {
           </div>
           <div className='col-md-7'>
             <div className='container'>
-              <h2 className='font-weight-bolder'>{urun.urun_adi}</h2>
-              <p>&#9733;&#9733;&#9733;&#9733;&#9733; <span className='indirim'>%20 İndirim</span> <span className='kargo'>Ücretsiz Kargo</span></p>
+              <h2 className='font-weight-bolder mt-4'>{urun.urun_adi}</h2>
+              <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p><span className='indirim'>%20 İndirim</span> <span className='kargo'>Ücretsiz Kargo</span></p>
               <p>{urun.aciklama}</p>
               <p className='text-muted h5 rounded'><strike>{(parseInt(urun.fiyat) + 1) / 0.8} TL</strike></p>
               <p style={{ marginTop: '-10px' }} className='font-weight-bolder h1 rounded'>{urun.fiyat} TL</p>
@@ -91,17 +92,17 @@ const Product = () => {
               <div className='text-center'>
                 <button className='btn btn-warning mt-2 w-100 font-weight-bold'>SATIN AL</button>
               </div>
-              <div className='container py-4 px-5 mt-3'>
-                <div className='row text-center'>
-                  <div className='col-md-4'>
+              <div className='container py-4 px-5'>
+                <div className='row text-center justify-content-center align-items-center'>
+                  <div className='col-md-4 mt-4'>
                     <i class="fa-solid fa-truck-fast fa-2xl mr-3"></i>
                     Ücretsiz Teslimat
                   </div>
-                  <div className='col-md-4'>
+                  <div className='col-md-4 mt-4'>
                     <i class="fa-solid fa-thumbs-up fa-2xl mr-3"></i>
                     Mutlu Müşteri
                   </div>
-                  <div className='col-md-4'>
+                  <div className='col-md-4 mt-4'>
                     <i class="fa-solid fa-gifts fa-2xl mr-3"></i>
                     Hediye Paketi ile Gönderim
                   </div>
@@ -111,7 +112,7 @@ const Product = () => {
           </div>
           <div className='container pt-5 mt-4 mb-3'>
             <h2 className='mb-5 text-center font-weight-bold'>Ürün Detayları</h2>
-            <div className='row justify-content-around align-items-center' style={{backgroundColor: '#f19a16'}}>
+            <div className='row justify-content-around align-items-center' style={{backgroundColor: '#ffee00'}}>
               <div className='col-md-6'>
                 <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/1.png`} className='w-100' alt="Ürün" />
               </div>
@@ -119,7 +120,7 @@ const Product = () => {
                 <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/3.png`} className='w-100' alt="Ürün" />
               </div>
               <div className='col-md-6'>
-                <ul className='h4 font-weight-light p-3 pl-5'>
+                <ul className='h5 p-3 pl-5'>
                   <li className='mt-3'><i class="fa-solid fa-star"></i> {urun.madde1}</li>
                   <li className='mt-3'><i class="fa-solid fa-face-grin-stars"></i> {urun.madde2}</li>
                   <li className='mt-3'><i class="fa-solid fa-meteor"></i> {urun.madde3}</li>
