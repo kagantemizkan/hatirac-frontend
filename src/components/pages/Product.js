@@ -112,7 +112,7 @@ const Product = () => {
           </div>
           <div className='container pt-5 mt-4 mb-3'>
             <h2 className='mb-5 text-center font-weight-bold'>Ürün Detayları</h2>
-            <div className='row justify-content-around align-items-center' style={{backgroundColor: '#ffee00'}}>
+            <div className='row justify-content-around align-items-center' style={{backgroundColor: 'teal', color: 'white'}}>
               <div className='col-md-6'>
                 <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/1.png`} className='w-100' alt="Ürün" />
               </div>
