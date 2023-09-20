@@ -18,6 +18,7 @@ const FizikselUrunler = () => {
     }, []);
     return (
         <div className='container-fluid p-5 bg-white rounded'>
+            <h2 className='text-center p-3'>Ürünlerimiz</h2>
             <div className='container'>
                 <div className="row justify-content-around">
                     {urunler.map((urun, index) => (

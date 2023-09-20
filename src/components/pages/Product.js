@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import Header from '../HomeComponents/Header';
 import '../../styles/Products/product.scss'
 import FizikselUrunler from '../HomeComponents/FizikselUrunler';
+import Footer from '../HomeComponents/Footer';
+import Marquee from '../HomeComponents/Marquee';
 
 const Product = () => {
   const [urun, setUrun] = useState({});
@@ -29,6 +31,7 @@ const Product = () => {
   return (
     <>
       <Header />
+      <Marquee />
       <div className='container-fluid px-5 py-4'>
         <div className='row'>
           <div className='col-md-5'>
@@ -75,20 +78,20 @@ const Product = () => {
             <div className='container'>
               <h2 className='font-weight-bolder'>{urun.urun_adi}</h2>
               <p>&#9733;&#9733;&#9733;&#9733;&#9733; <span className='indirim'>%20 İndirim</span> <span className='kargo'>Ücretsiz Kargo</span></p>
-              <p className='aciklama'>{urun.aciklama}</p>
+              <p>{urun.aciklama}</p>
               <p className='text-muted h5 rounded'><strike>{(parseInt(urun.fiyat) + 1) / 0.8} TL</strike></p>
               <p style={{ marginTop: '-10px' }} className='font-weight-bolder h1 rounded'>{urun.fiyat} TL</p>
-              <h5 className='font-weight-bold h3 mt-4'>Ürün Özellikleri</h5>
-              <p className='font-weight-light h5'>{urun.ozellikler}</p>
-              <ul className='mt-4 h5 font-weight-light'>
+              <h5 className='font-weight-bold h4 mt-4'>Ürün Özellikleri</h5>
+              <p className='font-weight-light h6'>{urun.ozellikler}</p>
+              <ul className='mt-3'>
                 <li><i className="fa-solid fa-hand-point-right"></i> {urun.madde1}</li>
                 <li><i className="fa-solid fa-hand-point-right"></i> {urun.madde2}</li>
                 <li><i className="fa-solid fa-hand-point-right"></i> {urun.madde3}</li>
               </ul>
               <div className='text-center'>
-                <button className='btn btn-warning mt-4 w-100 font-weight-bold'>SATIN AL</button>
+                <button className='btn btn-warning mt-2 w-100 font-weight-bold'>SATIN AL</button>
               </div>
-              <div className='container p-5 mt-3'>
+              <div className='container py-4 px-5 mt-3'>
                 <div className='row text-center'>
                   <div className='col-md-4'>
                     <i class="fa-solid fa-truck-fast fa-2xl mr-3"></i>
@@ -108,28 +111,34 @@ const Product = () => {
           </div>
           <div className='container pt-5 mt-4 mb-3'>
             <h2 className='mb-5 text-center font-weight-bold'>Ürün Detayları</h2>
-            <div className='row justify-content-around align-items-center'>
+            <div className='row justify-content-around align-items-center' style={{backgroundColor: '#f19a16'}}>
               <div className='col-md-6'>
-                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/1.png`} height={350} className='w-100' alt="Ürün" />
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/1.png`} className='w-100' alt="Ürün" />
               </div>
               <div className='col-md-6'>
-                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/3.png`} height={350} className='w-100' alt="Ürün" />
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/3.png`} className='w-100' alt="Ürün" />
               </div>
               <div className='col-md-6'>
-                <ul className='h4 font-weight-light p-3'>
+                <ul className='h4 font-weight-light p-3 pl-5'>
                   <li className='mt-3'><i class="fa-solid fa-star"></i> {urun.madde1}</li>
                   <li className='mt-3'><i class="fa-solid fa-face-grin-stars"></i> {urun.madde2}</li>
                   <li className='mt-3'><i class="fa-solid fa-meteor"></i> {urun.madde3}</li>
                 </ul>
               </div>
               <div className='col-md-6'>
-                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/5.png`} height={350} className='w-100' alt="Ürün" />
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/5.png`} className='w-100' alt="Ürün" />
               </div>
               <div className='col-md-6'>
-                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/6.png`} height={350} className='w-100' alt="Ürün" />
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/6.png`} className='w-100' alt="Ürün" />
               </div>
               <div className='col-md-6 text-center'>
                 <p className='font-weight-light h3 p-3'>{urun.ozellikler}</p>
+              </div>
+              <div className='col-md-6'>
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/2.png`} className='w-100' alt="Ürün" />
+              </div>
+              <div className='col-md-6'>
+                <img src={`https://hatirac.com/hatirac-backend/urunResmi/${urun.id}/4.png`} className='w-100' alt="Ürün" />
               </div>
             </div>
           </div>
@@ -186,6 +195,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }
