@@ -71,9 +71,6 @@ function FileUploaderPaid() {
         }
     };
 
-    const today = new Date();
-    const maxDate = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
-
     return (
         <div className='container p-3'>
             <Helmet>
