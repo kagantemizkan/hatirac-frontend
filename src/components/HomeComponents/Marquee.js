@@ -36,12 +36,12 @@ function Marquee() {
         className="marquee"
         ref={marqueeRef}
         style={{ whiteSpace: 'nowrap', display: 'inline-block' }}>
-        <span>TÜM ÜRÜNLERDE %20 İNDİRİM <i class="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
-        <span>SEVDİĞİNİZE VERECEĞİNİZ, ZAMANIN ÖTESİNDE BİR ARMAĞAN <i class="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
-        <span>HATIRALARINIZI HEDİYE OLARAK VERMEKTEN DAHA GÜZEL NE OLABİLİR? <i class="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
-        <span>TÜM ÜRÜNLERDE %20 İNDİRİM <i class="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
-        <span>HEM FİZİKSEL HEM DİJİTAL ÜRÜNLER <i class="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
-        <span>HEMEN ŞİMDİ SATIN AL, İNDİRİMDEN FAYDALAN! <i class="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
+        <span>TÜM ÜRÜNLERDE %20 İNDİRİM <i className="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
+        <span>SEVDİĞİNİZE VERECEĞİNİZ, ZAMANIN ÖTESİNDE BİR ARMAĞAN <i className="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
+        <span>HATIRALARINIZI HEDİYE OLARAK VERMEKTEN DAHA GÜZEL NE OLABİLİR? <i className="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
+        <span>TÜM ÜRÜNLERDE %20 İNDİRİM <i className="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
+        <span>HEM FİZİKSEL HEM DİJİTAL ÜRÜNLER <i className="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
+        <span>HEMEN ŞİMDİ SATIN AL, İNDİRİMDEN FAYDALAN! <i className="fa-regular fa-heart" style={{ color: '#F9D973' }}></i> </span>
       </div>
     </div>
   );

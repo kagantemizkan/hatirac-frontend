@@ -11,6 +11,7 @@ import Product from "./pages/Product";
 import Products from "./pages/Products";
 import FreeVersion from "./pages/FreeVersion";
 import FileUploaderPaid from "./pages/FileUploaderPaid";
+import FizikselPayment from "./pages/FizikselPayment";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/products' element={<Products />} />
         <Route path='/product/:id' element={<Product />} />
         <Route path='/free' element={<FreeVersion />} />
+        <Route path='/fiziksel-payment' element={<FizikselPayment />} />
       </Routes>
     </>
   );
