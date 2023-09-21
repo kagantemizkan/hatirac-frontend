@@ -10,6 +10,7 @@ import Admin from "./pages/Admin";
 import Product from "./pages/Product";
 import Products from "./pages/Products";
 import FreeVersion from "./pages/FreeVersion";
+import FileUploaderPaid from "./pages/FileUploaderPaid";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/upload' element={<FileUploader />} />
+        <Route path='/upload-paid' element={<FileUploaderPaid />} />
         <Route path='/show' element={<ShowFiles />} />
         <Route path='/show/:id' element={<ShowFilesWithId />} />
         <Route path='/monte' element={<Admin />} />

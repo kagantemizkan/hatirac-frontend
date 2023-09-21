@@ -24,9 +24,9 @@ const FreeVersion = () => {
                                 <div className="content">
                                     <ul>
                                         <li><i class="fa-regular fa-circle-xmark" style={{ color: 'red' }}></i> Sadece 1 adet Dosya Yükleme Kapasitesi</li>
-                                        <li><i class="fa-regular fa-circle-xmark" style={{ color: 'red' }}></i> En fazla 1 yıl sonrasına kilitleyebilme</li>
+                                        <li><i class="fa-regular fa-circle-xmark" style={{ color: 'red' }}></i> En fazla 1 ay sonrasına kilitleyebilme</li>
                                         <li><i class="fa-regular fa-circle-xmark" style={{ color: 'red' }}></i> 10mb dosya boyutu sınırı</li>
-                                        <li><i class="fa-regular fa-circle-xmark" style={{ color: 'red' }}></i> Müşteri Desteği Sınırlı</li>
+                                        <li><i class="fa-regular fa-circle-xmark" style={{ color: 'red' }}></i> Sadece Fotoğraf Dosyası</li>
                                         <li><i class="fa-regular fa-circle-check" style={{ color: '#13b42e' }}></i> Dosyaları Güvenli Koruma</li>
                                     </ul>
                                     <div className="link">
@@ -50,11 +50,11 @@ const FreeVersion = () => {
                                         <li><i class="fa-regular fa-circle-check" style={{ color: '#13b42e' }}></i> Sınırsız Dosya Yükleme Kapasitesi</li>
                                         <li><i class="fa-regular fa-circle-check" style={{ color: '#13b42e' }}></i> İstediğin tarihe kilitleyebilme</li>
                                         <li><i class="fa-regular fa-circle-check" style={{ color: '#13b42e' }}></i> Dosya boyutu sınırı yok</li>
-                                        <li><i class="fa-regular fa-circle-check" style={{ color: '#13b42e' }}></i> 7/24 Müşteri Desteği</li>
+                                        <li><i class="fa-regular fa-circle-check" style={{ color: '#13b42e' }}></i> Fotoğraf, Video, Ses ve Metin Dosyası</li>
                                         <li><i class="fa-regular fa-circle-check" style={{ color: '#13b42e' }}></i> Dosyaları Güvenli Koruma</li>
                                     </ul>
                                     <div className="link">
-                                        <a href="#"><i>Ücretli</i> Versiyon ile Devam Et</a>
+                                        <a href="https://hatirac.com/upload-paid"><i>Ücretli</i> Versiyon ile Devam Et</a>
                                     </div>
                                 </div>
                             </div>
