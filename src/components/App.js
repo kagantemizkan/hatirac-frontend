@@ -9,6 +9,7 @@ import Logo from '../images/logo.png'
 import Admin from "./pages/Admin";
 import Product from "./pages/Product";
 import Products from "./pages/Products";
+import FreeVersion from "./pages/FreeVersion";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/monte' element={<Admin />} />
         <Route path='/products' element={<Products />} />
         <Route path='/product/:id' element={<Product />} />
+        <Route path='/free' element={<FreeVersion />} />
       </Routes>
     </>
   );
