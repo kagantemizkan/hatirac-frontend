@@ -16,10 +16,13 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-4 mr-auto">
                         <li className="nav-item active">
-                            <a className="nav-link ml-4" href="/upload">Dosya Yükle ve Kilitle</a>
+                            <a className="nav-link ml-4" href="https://hatirac.com/products">Ürünler</a>
                         </li>
                         <li className="nav-item ml-4 active">
-                            <a className="nav-link" href="/show">Göster/Bul</a>
+                            <a className="nav-link" href="https://hatirac.com/free">Ücretsiz Versiyon</a>
+                        </li>
+                        <li className="nav-item ml-4 active">
+                            <a className="nav-link" href="https://hatirac.com/show">Hatıraç Ara/Bul</a>
                         </li>
                         <li className="nav-item ml-4 active">
                             <a className="nav-link" href="https://wa.me/905379239309">Bizimle İletişime Geç!</a>
