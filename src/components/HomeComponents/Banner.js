@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import Hatirac1 from '../../images/hatirac1.png'
 import Hatirac2 from '../../images/hatirac2.png'
@@ -9,29 +10,38 @@ const Banner = () => {
     return (
         <div className='container-fluid text-center bg-sari'>
             <div className='row'>
-                <div className='col-md-6  bannerText'>
-                    <h2>GELECEKTEKİ KENDİNİZE VEYA SEVDİĞİNİZE ZAMANIN ÖTESİNDE BİR ARMAĞAN...</h2>
-                </div>
                 <div className='col-md-6  text-left'>
                     <img src={Hatirac1} alt='Hatıraç' width={'100%'} />
                 </div>
-                <div className='col-md-6  text-right'>
-                    <img src={Hatirac2} alt='Hatıraç' width={'100%'} />
+                <div className='col-md-6  bannerText'>
+                    <h1>SEVDİĞİNİZE VERECEĞİNİZ, ZAMANIN ÖTESİNDE BİR ARMAĞAN...</h1>
                 </div>
                 <div className='col-md-6  bannerText'>
-                    <h2>SEVDİKLERİNİZE ANLAMLI BİR ANI BIRAKMAK İSTER MİSİNİZ?</h2>
-                </div>
-                <div className='col-md-6  bannerText'>
-                    <h2>Menüden 'Dosya Yükle ve Kilitle' sekmesine git. Medya ve mesajını kaydet. Hangi tarihe kadar kilitli duracağını seç ve KİLİTLE!</h2>
-                </div>
-                <div className='col-md-6  text-left'>
-                    <img src={Hatirac3} alt='Hatıraç' width={'100%'} />
+                    <h1>HATIRALARINIZI HEDİYE OLARAK VERMEKTEN DAHA GÜZEL NE OLABİLİR?</h1>
                 </div>
                 <div className='col-md-6  text-right'>
                     <img src={Hatirac4} alt='Hatıraç' width={'100%'} />
                 </div>
+                <div className='col-md-6  text-left'>
+                    <img src={Hatirac2} alt='Hatıraç' width={'100%'} />
+                </div>
                 <div className='col-md-6  bannerText'>
-                    <h2>Ürün ID'ni kaydet veya linki kopyala veya QR Kodu galerine kaydet. Anı yollayacağın kişiye gönder ve zamanı gelince kilit açılsın, HATIRAÇ'a erişin.</h2>
+                    <div className='container'>
+                        <h2>Hatıraç Yazılım'ın <i>ücretsiz</i> versiyonunu hemen şimdi dene! İstersen sınırsız dosya paylaşımı, sınırsız zaman seçeneği ve daha fazla özellikler ile Hatıraç Yazılım'ın ücretli versiyonunu kullan.</h2>
+                        <div className='container row justify-content-around mt-3 p-3'>
+                            <a href='#' className='btn btn-warning mt-3'><h2>Ücretsiz Versiyonu Dene</h2></a>
+                            <a href='#' className='btn btn-primary mt-3'><h2 className='text-white'>Sınırsız Hatıraç Yazılım!</h2></a>
+                        </div>
+                    </div>
+                </div>
+                <div className='col-md-6  bannerText'>
+                    <div className='container'>
+                    <h2>İster Yazılım olarak, ister Fiziksel olarak Hatıraç'ı kullanabilirsin. Video, resim ve ses dosyalarını yükle, istediğin tarihi seç ve KİLİTLE! Hepsi bu kadar. Hatıraç ile anılarını saklamak bu kadar basit. Hadi şimdi sen de katıl!</h2>
+                    <a href='https://hatirac.com/products' className='btn btn-dark mt-3'><h2 className='text-white'>Fiziksel Ürünleri Gör</h2></a>
+                    </div>
+                </div>
+                <div className='col-md-6  text-right'>
+                    <img src={Hatirac3} alt='Hatıraç' width={'100%'} />
                 </div>
             </div>
         </div>

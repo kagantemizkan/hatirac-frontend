@@ -69,8 +69,10 @@ function FileUploader() {
       setLockDate('')
       setSelectedFiles([])
     }
-
   };
+
+  const today = new Date();
+  const maxDate = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
 
   return (
     <div className='container p-3'>
@@ -88,9 +90,9 @@ function FileUploader() {
                 <span className="drop-title">Medya Ekle</span>
                 {selectedFiles.length > 0 ? <p className='drop-text'>{selectedFiles.length} adet dosya yüklendi.</p>
                   :
-                  <p className='drop-text'>Video, Fotoğraf, Resim vb.</p>}
+                  <p className='drop-text'>Fotoğraf (Sadece 1 adet)</p>}
 
-                <input type="file" className='custom-file-input' id="dropFile" multiple onChange={handleFileChange} accept="image/*, video/*, audio/*" required />
+                <input type="file" className='custom-file-input' id="dropFile" onChange={handleFileChange} accept="image/*" required />
               </div>
               <img src={MediaIcon} alt='MediaIcon' />
             </label>
@@ -118,7 +120,16 @@ function FileUploader() {
                   id='lock-date'
                   type="date"
                   value={lockDate}
-                  onChange={(e) => setLockDate(e.target.value)}
+                  onChange={(e) => {
+                    const selectedDate = new Date(e.target.value);
+                    if (selectedDate <= maxDate) {
+                      setLockDate(e.target.value);
+                    } else {
+                      // Hata mesajı veya uygun bir geri bildirim ekleyebilirsiniz.
+                      alert("Lütfen en fazla 1 ay sonraki bir tarih seçin.");
+                    }
+                  }}
+                  max={maxDate.toISOString().split('T')[0]}
                   required
                 />
               </div>

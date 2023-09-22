@@ -1,6 +1,4 @@
 body {
-    background-color: #dfeaf3;
-    opacity: 1;
-    background: linear-gradient(142deg, #dfeaf355 25%, transparent 25%) -29px 0/ 58px 58px, linear-gradient(225deg, #dfeaf3 25%, transparent 25%) 10px 0/ 58px 58px, linear-gradient(313deg, #dfeaf355 25%, transparent 25%) 0px 0/ 58px 58px, linear-gradient(45deg, #dfeaf3 25%, #f9f9fd 25%) 0px 0/ 58px 58px;
+    background-color: #dfeaf370;
     background-size: cover;
 }
