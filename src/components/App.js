@@ -12,6 +12,11 @@ import Products from "./pages/Products";
 import FreeVersion from "./pages/FreeVersion";
 import FileUploaderPaid from "./pages/FileUploaderPaid";
 import FizikselPayment from "./pages/FizikselPayment";
+import Paraiade from "./Sozlesmeler/Paraiade";
+import GizlilikPolitikasi from "./Sozlesmeler/GizlilikPolitikasi";
+import HizmetSartlari from "./Sozlesmeler/HizmetSartlari";
+import KvkkPolitikasi from "./Sozlesmeler/KvkkPolitikasi";
+import KargoPolitikasi from "./Sozlesmeler/KargoPolitikasi";
 
 function App() {
   return (
@@ -30,6 +35,11 @@ function App() {
         <Route path='/product/:id' element={<Product />} />
         <Route path='/free' element={<FreeVersion />} />
         <Route path='/fiziksel-payment' element={<FizikselPayment />} />
+        <Route path='/para-iade' element={<Paraiade />} />
+        <Route path='/gizlilik-politikasi' element={<GizlilikPolitikasi />} />
+        <Route path='/hizmet-sartlari' element={<HizmetSartlari />} />
+        <Route path='/kvkk-politikasi' element={<KvkkPolitikasi />} />
+        <Route path='/kargo-politikasi' element={<KargoPolitikasi />} />
       </Routes>
     </>
   );
