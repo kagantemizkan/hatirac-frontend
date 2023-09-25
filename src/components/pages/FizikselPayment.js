@@ -6,9 +6,14 @@ import Odeme from "../PaymentComponents/Odeme";
 function FizikselPayment(props) {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({});
+  const [userID, setUserID] = useState('')
 
   const handleNext = (data) => {
     setFormData({ ...formData, ...data });
+    setCurrentStep(currentStep + 1);
+  };
+
+  const handleSonraki = () => {
     setCurrentStep(currentStep + 1);
   };
 
@@ -19,18 +24,19 @@ function FizikselPayment(props) {
   return (
     <div className="container py-5 px-3">
       <h2 className="text-center font-weight-bold mb-4">Sipariş Sayfası</h2>
-      <div className="row">
+      <div className="row align-items-center">
         <div className="col-md-8">
           {currentStep === 1 && <AddresInfo onNext={handleNext} />}
-          {currentStep === 2 && <HatiracForFiziksel onNext={handleNext} onPrevious={handlePrevious} />}
-          {currentStep === 3 && <Odeme formData={formData} onPrevious={handlePrevious} />}
+          {currentStep === 2 && <HatiracForFiziksel setUserID={setUserID} handleSonraki={handleSonraki} onPrevious={handlePrevious} />}
+          {currentStep === 3 && <Odeme userID={userID} formData={formData} onPrevious={handlePrevious} />}
         </div>
         <div className="col-md-4 mt-5 py-3">
-          <div className="container">
-            <h4>Aldığınız Ürün: {props.urun}</h4>
-            <h4>Teslimat Ücreti: 0.00 TL</h4>
-            <h4>Toplam Tutar: {props.fiyat} TL</h4>
-            <h4>Ödenecek Tutar: {props.fiyat} TL</h4>
+          <div className="container bg-darkBlue text-white p-3 rounded">
+            <h5 className="font-weight-light">Aldığınız Ürün: <span className="font-weight-bold float-right">{props.urun}</span></h5>
+            <h5 className="font-weight-light">Teslimat Ücreti: <span className="font-weight-bold float-right">0.00 TL</span></h5>
+            <h5 className="font-weight-light">Toplam Tutar: <span className="font-weight-bold float-right">{props.fiyat} TL</span></h5>
+            <hr className="mt-3 mb-3 bg-white" />
+            <h5 className="font-weight-light">Ödenecek Tutar: <span className="font-weight-bold float-right">{props.fiyat} TL</span></h5>
           </div>
         </div>
       </div>

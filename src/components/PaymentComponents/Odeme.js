@@ -1,6 +1,6 @@
 import React from "react";
 
-function Odeme({ formData, onPrevious }) {
+function Odeme({ formData, userID, onPrevious }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Ödeme işlemleri burada gerçekleştirilebilir.
@@ -17,8 +17,11 @@ function Odeme({ formData, onPrevious }) {
                 <p>Şehir: {formData.sehir}</p>
                 <p>İlçe (Semt): {formData.semt}</p>
                 <p>Adres: {formData.address}</p>
-                <button type="button" onClick={onPrevious}>Önceki Adım</button>
-                <button type="submit">Ödeme Yap</button>
+                <p>Hatıraç: {userID}</p>
+                <div className='row justify-content-around'>
+                    <button className="mt-5 btn btn-info" type="button" onClick={onPrevious}>Önceki Adım</button>
+                    <button className="mt-5 btn btn-info" type="submit">Ödeme Yap</button>
+                </div>
             </form>
         </div>
     );
