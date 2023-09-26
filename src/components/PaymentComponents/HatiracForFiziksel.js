@@ -3,7 +3,7 @@ import '../../styles/upload.scss'
 import MediaIcon from '../../images/medyaIcon.svg'
 import Lock from '../../images/lock.svg'
 
-function HatiracForFiziksel({ handleSonraki, setUserID, onPrevious }) {
+function HatiracForFiziksel({ handleSonraki, setUserID, setMesaj, onPrevious }) {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [message, setMessage] = useState('');
   const [lockDate, setLockDate] = useState('');
@@ -70,6 +70,7 @@ function HatiracForFiziksel({ handleSonraki, setUserID, onPrevious }) {
   const handleSubmit = (e)=> {
     e.preventDefault()
     setUserID(complatedData.userid)
+    setMesaj(complatedData.message)
     handleSonraki()
   }
 

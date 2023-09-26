@@ -7,6 +7,7 @@ function FizikselPayment(props) {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [userID, setUserID] = useState('')
+  const [mesaj, setMesaj] = useState('')
 
   const handleNext = (data) => {
     setFormData({ ...formData, ...data });
@@ -27,8 +28,8 @@ function FizikselPayment(props) {
       <div className="row align-items-center">
         <div className="col-md-8">
           {currentStep === 1 && <AddresInfo onNext={handleNext} />}
-          {currentStep === 2 && <HatiracForFiziksel setUserID={setUserID} handleSonraki={handleSonraki} onPrevious={handlePrevious} />}
-          {currentStep === 3 && <Odeme userID={userID} formData={formData} onPrevious={handlePrevious} />}
+          {currentStep === 2 && <HatiracForFiziksel setMesaj={setMesaj} setUserID={setUserID} handleSonraki={handleSonraki} onPrevious={handlePrevious} />}
+          {currentStep === 3 && <Odeme mesaj={mesaj} urun={props.urun} urunFiyat={props.fiyat} userID={userID} formData={formData} onPrevious={handlePrevious} />}
         </div>
         <div className="col-md-4 mt-5 py-3">
           <div className="container bg-darkBlue text-white p-3 rounded">
