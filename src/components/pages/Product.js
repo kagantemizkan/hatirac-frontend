@@ -101,15 +101,15 @@ const Product = () => {
                     <div className='row text-center justify-content-center align-items-center'>
                       <div className='col-md-4 mt-4'>
                         <i className="fa-solid fa-truck-fast fa-2xl mr-3"></i>
-                        Ücretsiz Teslimat
+                        <p className='my-3'>Ücretsiz Teslimat</p>
                       </div>
                       <div className='col-md-4 mt-4'>
                         <i className="fa-solid fa-thumbs-up fa-2xl mr-3"></i>
-                        Mutlu Müşteri
+                        <p className='my-3'>Mutlu Müşteri</p>
                       </div>
                       <div className='col-md-4 mt-4'>
                         <i className="fa-solid fa-gifts fa-2xl mr-3"></i>
-                        Hediye Paketi ile Gönderim
+                        <p className='my-3'>Hediye Paketi ile Gönderim</p>
                       </div>
                     </div>
                   </div>
