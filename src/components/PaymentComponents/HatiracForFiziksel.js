@@ -83,8 +83,7 @@ function HatiracForFiziksel({ handleSonraki, setUserID, setMesaj, onPrevious }) 
             <div className='container text-center'>
               <i className="fa-regular fa-circle-check fa-4x p-3" style={{ color: '#13b42e' }}></i>
               <p className='h5 bg-success text-white p-4'>Hatıraç'ınız oluşturuldu. Sonraki adıma geçebilirsiniz.</p>
-              <div className='row justify-content-around'>
-                <button className="mt-5 btn btn-info" type="button" onClick={onPrevious}>Önceki Adım</button>
+              <div className='row justify-content-center'>
                 <button className="mt-5 btn btn-info" type="submit">Sonraki Adım</button>
               </div>
             </div>
