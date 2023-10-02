@@ -26,18 +26,16 @@ const Banner = () => {
                     <img src={Hatirac2} alt='Hatıraç' width={'100%'} />
                 </div>
                 <div className='col-md-6  bannerText'>
-                    <div className='container'>
+                    <div className='container my-4'>
                         <h2>Hatıraç Yazılım'ın <i>ücretsiz</i> versiyonunu hemen şimdi dene! İstersen sınırsız dosya paylaşımı, sınırsız zaman seçeneği ve daha fazla özellikler ile Hatıraç Yazılım'ın ücretli versiyonunu kullan.</h2>
-                        <div className='container row justify-content-around mt-3 p-3'>
-                            <a href='#' className='btn btn-warning mt-3'><h2>Ücretsiz Versiyonu Dene</h2></a>
-                            <a href='#' className='btn btn-primary mt-3'><h2 className='text-white'>Sınırsız Hatıraç Yazılım!</h2></a>
-                        </div>
+                        <a href='https://hatirac.com/free' className='btn btn-warning mt-3'><h2>Ücretsiz Versiyonu Dene</h2></a>
+                        <a href='https://hatirac.com/free' className='btn btn-primary mt-3 ml-2'><h2 className='text-white'>Sınırsız Hatıraç Yazılım!</h2></a>
                     </div>
                 </div>
                 <div className='col-md-6  bannerText'>
                     <div className='container'>
-                    <h2>İster Yazılım olarak, ister Fiziksel olarak Hatıraç'ı kullanabilirsin. Video, resim ve ses dosyalarını yükle, istediğin tarihi seç ve KİLİTLE! Hepsi bu kadar. Hatıraç ile anılarını saklamak bu kadar basit. Hadi şimdi sen de katıl!</h2>
-                    <a href='https://hatirac.com/products' className='btn btn-dark mt-3'><h2 className='text-white'>Fiziksel Ürünleri Gör</h2></a>
+                        <h2>İster Yazılım olarak, ister Fiziksel olarak Hatıraç'ı kullanabilirsin. Video, resim ve ses dosyalarını yükle, istediğin tarihi seç ve KİLİTLE! Hepsi bu kadar. Hatıraç ile anılarını saklamak bu kadar basit. Hadi şimdi sen de katıl!</h2>
+                        <a href='https://hatirac.com/products' className='btn btn-dark mt-3 mb-5'><h2 className='text-white'>Fiziksel Ürünleri Gör</h2></a>
                     </div>
                 </div>
                 <div className='col-md-6  text-right'>
