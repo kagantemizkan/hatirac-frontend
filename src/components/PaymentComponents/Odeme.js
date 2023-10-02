@@ -1,6 +1,6 @@
 import React from "react";
 
-function Odeme({ formData, userID, onPrevious, urun, mesaj }) {
+function Odeme({ formData, userID, onPrevious, urun, mesaj, fiyat }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -15,6 +15,7 @@ function Odeme({ formData, userID, onPrevious, urun, mesaj }) {
                 adres: formData.address,
                 hatirac_id: userID,
                 urun: urun,
+                fiyat: fiyat,
                 mesaj: mesaj
             };
             console.log(orderData)
@@ -51,6 +52,7 @@ function Odeme({ formData, userID, onPrevious, urun, mesaj }) {
                 <p>Adres: {formData.address}</p>
                 <p>Hatıraç: {userID}</p>
                 <p>Ürün: {urun}</p>
+                <p>Ödenecek Tutar: {fiyat} TL</p>
                 <p>Mesajınız: {mesaj}</p>
                 <div className='row justify-content-around'>
                     <button className="mt-5 btn btn-info" type="button" onClick={onPrevious}>Önceki Adım</button>

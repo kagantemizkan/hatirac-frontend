@@ -17,7 +17,8 @@ import GizlilikPolitikasi from "./Sozlesmeler/GizlilikPolitikasi";
 import HizmetSartlari from "./Sozlesmeler/HizmetSartlari";
 import KvkkPolitikasi from "./Sozlesmeler/KvkkPolitikasi";
 import KargoPolitikasi from "./Sozlesmeler/KargoPolitikasi";
-import SatınAlmaBasarili from "./pages/SatınAlmaBasarili";
+import SatinAlmaBasarili from "./pages/SatinAlmaBasarili";
+import SatinAlmaBasarisiz from "./pages/SatinAlmaBasarisiz";
 
 function App() {
   return (
@@ -41,7 +42,8 @@ function App() {
         <Route path='/hizmet-sartlari' element={<HizmetSartlari />} />
         <Route path='/kvkk-politikasi' element={<KvkkPolitikasi />} />
         <Route path='/kargo-politikasi' element={<KargoPolitikasi />} />
-        <Route path='/satinalma-basarili' element={<SatınAlmaBasarili />} />
+        <Route path='/satinalma-basarili' element={<SatinAlmaBasarili />} />
+        <Route path='/satinalma-basarisiz' element={<SatinAlmaBasarisiz />} />
       </Routes>
     </>
   );
